@@ -19,7 +19,7 @@ body {
   
   .todo-column {
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 15px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   }
@@ -44,5 +44,9 @@ body {
 body.dark-mode {
   --background-color: #333;
   --text-color: #fff;
+
+  .todo-column {
+    background-color: #333;
+  }
 }
   
