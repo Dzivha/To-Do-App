@@ -18,7 +18,7 @@ function addTask() {
       task.dueDate = dueDateValue; // Add due date only if it's provided
     }
     else{
-      task.dueDate = "N/A";
+      task.dueDate = "No Deadline";
     }
 
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
