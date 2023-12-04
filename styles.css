@@ -1,52 +1,81 @@
 /* Your styles for the To-Do app */
 body {
-    font-family: cursive;
-    background-color: #f3f3f3;
-    color: #333;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .todo-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .todo-column {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  input[type="text"],
-  button {
-    margin-top: 10px;
-  }
-  
-  /* Light Mode Styles */
+  font-family: cursive;
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.todo-column {
+  font-size: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items: center;
+
+}
+
+.add{
+  padding: 10px;
+  border-radius: 80px;
+
+}
+
+.input{
+  padding: 10px;
+  border-radius: 80px;
+}
+
+.date{
+  padding: 10px;
+  border-radius: 80px;
+}
+
+input[type="text"],
+button {
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 80px;
+  padding: 10px;
+  margin: 3px;
+}
+
+/* Light Mode Styles */
 :root {
-  --background-color: #fff;
-  --text-color: #333;
+--background-color: #fff;
+--text-color: #333;
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+background-color: var(--background-color);
+color: var(--text-color);
 }
 
 /* Dark Mode Styles */
 body.dark-mode {
-  --background-color: #333;
-  --text-color: #fff;
+--background-color: #333;
+--text-color: #fff;
 
-  .todo-column {
-    background-color: #333;
-  }
+.todo-column {
+  background-color: #333;
 }
-  
+}
