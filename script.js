@@ -69,4 +69,22 @@ document.addEventListener('DOMContentLoaded', () => {
       todoList.appendChild(li);
     });
   }
+
+  // Function to toggle dark/light mode
+function toggleDarkMode() {
+  const body = document.body;
+  body.classList.toggle('dark-mode');
+  const isDarkMode = body.classList.contains('dark-mode');
+  localStorage.setItem('darkMode', isDarkMode);
+}
+
+// Check for user's preferred mode on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const storedMode = localStorage.getItem('darkMode');
+
+  if (storedMode === 'true' || (storedMode === null && prefersDarkMode)) {
+    document.body.classList.add('dark-mode');
+  }
+});
   
