@@ -80,6 +80,48 @@ function renderTasks(tasks) {
   });
 }
 
+// Function to sort tasks 
+function sortTasks(criteria) {
+  let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+  switch (criteria) {
+    case 'dueDate':
+      tasks.sort((a, b) => {
+        if (!a.dueDate && !b.dueDate) return 0;
+        if (a.dueDate==="No Deadline") return 1;
+        if (b.dueDate==="No Deadline") return -1;
+        return new Date(a.dueDate) - new Date(b.dueDate);
+      });
+      break;
+    case 'createdAt':
+      tasks.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+      break;
+    case 'alphabetical':
+      tasks.sort((a, b) => a.text.localeCompare(b.text));
+      break;
+    default:
+    // maintain the order of tasks as they are
+      break;
+  }
+
+  renderTasks(tasks);
+}
+
+// Function to search tasks 
+function searchTasks() {
+  const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+  const filteredTasks = tasks.filter(task => {
+    const taskName = task.text.toLowerCase();
+    const dueDate = task.dueDate ? task.dueDate.toLowerCase() : ''; 
+
+    return taskName.includes(searchQuery) || dueDate.includes(searchQuery);
+  });
+
+  renderTasks(filteredTasks);
+}
+
 // Function to toggle dark/light mode
 function toggleDarkMode() {
 const body = document.body;

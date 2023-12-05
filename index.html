@@ -10,9 +10,17 @@
   <div class="container">
     <h1>To-Do App</h1>
     <!--<button onclick="toggleDarkMode()">Toggle Dark Mode</button>-->
+    <label for="sortSelect">Sort by:</label>
+    <select id="sortSelect" onchange="sortTasks(this.value)">
+      <option value="default">Default</option>
+      <option value="dueDate">Due Date</option>
+      <option value="createdAt">Date Created</option>
+      <option value="alphabetical">Alphabetical</option>
+    </select>
     <div class="todo-container">
       <div class="todo-column" id="todo">
         <h2>To Do</h2>
+        <input class ="search" type="text" id="searchInput" placeholder="Search tasks..." oninput="searchTasks()">
         <ul id="todo-list" class="list"></ul>
         <input type="text" id="taskInput" placeholder="Add a task..." class="input">
         <input type="date" id="dueDateInput" class="date">

@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
 ul {
@@ -23,6 +24,7 @@ ul {
   display: flex;
   justify-content: center;
   gap: 20px;
+  position: relative;
 }
 
 .todo-column {
@@ -52,6 +54,8 @@ ul {
   border-radius: 80px;
 }
 
+
+
 input[type="text"],
 button {
   margin-top: 10px;
@@ -61,6 +65,15 @@ button {
   border-radius: 80px;
   padding: 10px;
   margin: 3px;
+}
+
+.search {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 /* Light Mode Styles */
