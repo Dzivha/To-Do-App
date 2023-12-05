@@ -15,9 +15,6 @@ body {
   position: relative;
 }
 
-ul {
-  list-style-type:none;
-}
 
 
 .todo-container {
@@ -36,6 +33,7 @@ ul {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 
 }
 
@@ -55,16 +53,26 @@ ul {
   border-radius: 80px;
 }
 
-.list {
-  width: 100%; 
-}
-
 input[type="text"],
 button {
   margin-top: 10px;
   border-radius: 80px;
   padding: 10px;
   margin: 3px;
+}
+
+
+li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: flex-end; */
+  min-width: 100%;
+  margin: 5px;
+}
+
+ul{
+  list-style-type:none;
 }
 
 .search {

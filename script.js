@@ -58,7 +58,6 @@ function toggleCompletion(index) {
 
 // Function to render tasks
 function renderTasks(tasks) {
-  
   const todoList = document.getElementById('todo-list');
   todoList.textContent = '';
   tasks.forEach((task, index) => {
@@ -90,6 +89,44 @@ function renderTasks(tasks) {
   });
 }
 
+// function renderTasks(tasks) {
+//   const todoList = document.getElementById('todo-list');
+//   todoList.textContent = '';
+
+//   const taskElements = tasks.map((task, index) => {
+//     const li = document.createElement('li');
+//     const completeCheckBox = document.createElement("input");
+//     completeCheckBox.setAttribute("type", "Checkbox");
+//     li.appendChild(completeCheckBox);
+
+//     const taskText = document.createElement('span');
+//     taskText.textContent = `${task.text} - Due: ${task.dueDate}`;
+//     if (task.completed) {
+//       taskText.style.textDecoration = 'line-through';
+//     }
+//     li.appendChild(taskText);
+
+//     const removeButton = document.createElement('button');
+//     removeButton.textContent = 'Remove';
+//     removeButton.onclick = () => removeTask(index);
+//     li.appendChild(removeButton);
+
+//     const completeButton = document.createElement('button');
+//     completeButton.textContent = task.completed ? 'Undo' : 'Complete';
+//     completeButton.onclick = () => toggleCompletion(index);
+//     li.appendChild(completeButton);
+
+//     return li;
+//   });
+
+//   taskElements.forEach(taskElement => {
+//     todoList.appendChild(taskElement);
+//   });
+// }
+
+
+
+
 
 // Function to sort tasks 
 function sortTasks(criteria) {
@@ -104,9 +141,7 @@ function sortTasks(criteria) {
         return new Date(a.dueDate) - new Date(b.dueDate);
       });
       break;
-    case 'createdAt':
-      tasks.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
-      break;
+
     case 'alphabetical':
       tasks.sort((a, b) => a.text.localeCompare(b.text));
       break;

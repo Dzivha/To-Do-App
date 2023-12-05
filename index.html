@@ -9,12 +9,10 @@
 <body>
   <div class="container">
     <h1>To-Do App</h1>
-    <!--<button onclick="toggleDarkMode()">Toggle Dark Mode</button>-->
     <label for="sortSelect">Sort by:</label>
     <select id="sortSelect" onchange="sortTasks(this.value)">
       <option value="default">Default</option>
       <option value="dueDate">Due Date</option>
-      <option value="createdAt">Date Created</option>
       <option value="alphabetical">Alphabetical</option>
     </select>
     <div class="todo-container">
@@ -27,6 +25,7 @@
         <button onclick="addTask()" class="add">Add Task</button>
       </div>
     </div>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
   </div>
   <script src="script.js"></script>
 </body>
