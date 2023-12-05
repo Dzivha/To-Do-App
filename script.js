@@ -24,7 +24,17 @@ function addTask() {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.push(task);
     localStorage.setItem('tasks', JSON.stringify(tasks));
-    renderTasks(tasks);
+
+     // Retrieve and apply the search query
+     const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+     const filteredTasks = tasks.filter(task => {
+       const taskName = task.text.toLowerCase();
+       const dueDate = task.dueDate ? task.dueDate.toLowerCase() : '';
+ 
+       return taskName.includes(searchQuery) || dueDate.includes(searchQuery);
+     });
+
+    renderTasks(filteredTasks);
     taskInput.value = '';
     dueDateInput.value = '';
   }
