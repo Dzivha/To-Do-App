@@ -80,6 +80,7 @@ function renderTasks(tasks) {
   });
 }
 
+
 // Function to sort tasks 
 function sortTasks(criteria) {
   let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
