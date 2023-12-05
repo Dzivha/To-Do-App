@@ -50,7 +50,7 @@ function toggleCompletion(index) {
 function renderTasks(tasks) {
   
   const todoList = document.getElementById('todo-list');
-  todoList.innerHTML = '';
+  todoList.textContent = '';
   tasks.forEach((task, index) => {
     const li = document.createElement('li');
     const completeCheckBox = document.createElement("INPUT");
