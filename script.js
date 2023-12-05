@@ -1,4 +1,4 @@
-// Retrieving tasks from local storage on page load
+// Retrieve tasks from local storage on page load
 document.addEventListener('DOMContentLoaded', () => {
   const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
   renderTasks(tasks);
@@ -48,10 +48,15 @@ function toggleCompletion(index) {
 
 // Function to render tasks
 function renderTasks(tasks) {
+  
   const todoList = document.getElementById('todo-list');
   todoList.innerHTML = '';
   tasks.forEach((task, index) => {
     const li = document.createElement('li');
+    const completeCheckBox = document.createElement("INPUT");
+    completeCheckBox.setAttribute("type", "checkbox");
+    li.appendChild(completeCheckBox);
+
     li.textContent = `${task.text} - Due: ${task.dueDate}`;
 
     const removeButton = document.createElement('button');
@@ -61,6 +66,8 @@ function renderTasks(tasks) {
     const completeButton = document.createElement('button');
     completeButton.textContent = task.completed ? 'Undo' : 'Complete';
     completeButton.onclick = () => toggleCompletion(index);
+
+
 
     li.appendChild(completeButton);
     li.appendChild(removeButton);
